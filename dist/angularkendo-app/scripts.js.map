@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///src/script.js"],"names":[],"mappings":";AACA;AACA;;AAEA;AACA;;AAEA,KAAK;AACL","file":"scripts.js","sourcesContent":["\n function myAct(){\n    setTimeout(function(){\n     \n     document.getElementById(\"myGrid\").innerHeight =  window.innerHeight;\n     //alert(window.innerHeight)\n\n    },1000);\n }\n\n"],"sourceRoot":""}
