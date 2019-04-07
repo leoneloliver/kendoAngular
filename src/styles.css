@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: sans-serif;
+}
+
+.k-grid-header, .k-grid-toolbar, .k-grouping-header, .k-grid-add-row, .k-grid-footer {
+    color: #ffffff;
+    background-color: #ef9133;
+}
+.k-pager-wrap {
+    color: #f7f7f7;
+    background-color: #1f5aa7;
+}
+.k-grid th, .k-grid td {
+    padding: 13px 12px;
+}
+.k-pager-nav:hover {
+    color: #f7f7f7;
+    background-color: #f6b733;
+}

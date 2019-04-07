@@ -1,0 +1,12 @@
+.header-bar{
+  width: 100%;
+  text-align: left;
+}
+.logo{
+  width: 95px;
+}
+@media screen and (max-width: 768px) {
+  .header-bar{
+    text-align: center;
+  }
+}
