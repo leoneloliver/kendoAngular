@@ -48,7 +48,7 @@ module.exports = ".k-button[disabled],[disabled] .k-button{outline:none;cursor:d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\nbody{\n  font-family: sans-serif;\n}\n.k-grid-header, .k-grid-toolbar, .k-grouping-header, .k-grid-add-row, .k-grid-footer {\n    color: #ffffff;\n    background-color: #ef9133;\n}\n.k-pager-wrap {\n    color: #f7f7f7;\n    background-color: #1f5aa7;\n}\n.k-grid th, .k-grid td {\n    padding: 13px 12px;\n}\n.k-pager-nav:hover {\n    color: #f7f7f7;\n    background-color: #f6b733;\n}\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\nbody{\n  font-family: sans-serif;\n}\n.k-grid-header, .k-grid-toolbar, .k-grouping-header, .k-grid-add-row, .k-grid-footer {\n    color: #ffffff;\n    background-color: #ef9133;\n}\n.k-pager-wrap {\n    color: #f7f7f7;\n    background-color: #1f5aa7;\n}\n.k-grid th, .k-grid td {\n    padding: 13px 12px;\n}\n.k-pager-nav:hover {\n    color: #f7f7f7;\n    background-color: #f6b733;\n}\n.k-grid-header .k-i-sort-asc-sm, .k-grid-header .k-i-sort-desc-sm, .k-grid-header .k-sort-order {\n    color: #ffffff;\n}\n.k-pager-numbers .k-state-selected {\n    color: #fff;\n    background-color: #ef9133;\n}\n.k-pager-numbers .k-link {\n    color: #f5f5f5;\n}"
 
 /***/ }),
 

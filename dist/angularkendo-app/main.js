@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header-bar{\n  width: 100%;\n  text-align: left;\n}\n.logo{\n  width: 95px;\n}\n@media screen and (max-width: 768px) {\n  .header-bar{\n    text-align: center;\n  }\n}"
+module.exports = ".header-bar{\n  width: 100%;\n  text-align: left;\n}\n.logo{\n  width: 95px;\n}\n.k-grid-header, .k-grid-toolbar, .k-grouping-header, .k-grid-add-row, .k-grid-footer {\n    color: #ffffff;\n    background-color: #ef9133;\n}\n.k-pager-wrap {\n    color: #f7f7f7;\n    background-color: #1f5aa7;\n}\n.k-grid th, .k-grid td {\n    padding: 13px 12px;\n}\n.k-pager-nav:hover {\n    color: #f7f7f7;\n    background-color: #f6b733;\n}\n.k-grid-header .k-i-sort-asc-sm, .k-grid-header .k-i-sort-desc-sm, .k-grid-header .k-sort-order {\n    color: #ffffff;\n}\n.k-pager-numbers .k-state-selected {\n    color: #fff;\n    background-color: #ef9133;\n}\n.k-pager-numbers .k-link {\n    color: #f5f5f5;\n}\n@media screen and (max-width: 768px) {\n  .header-bar{\n    text-align: center;\n  }\n}"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = ".header-bar{\n  width: 100%;\n  text-align: left;\n}\n.logo{\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-bar\">\n    <img src=\"https://d9hhrg4mnvzow.cloudfront.net/go.cority.com/cority-ehs-software-adwordsnew/579a8b26-cority-logo-white-bg-1620x534_032010032010000000.jpg\" class=\"logo\">\n</div>\n<kendo-grid\n  [kendoGridBinding]=\"data\"\n  [pageSize]=\"pageSize\"\n  [skip]=\"skip\"\n  [pageable]=\"true\"\n  [height]=\"600\"\n  (pageChange)=\"onPageChange($event)\"\n  [sortable]=\"{\n    allowUnsort: allowUnsort,\n    mode: multiple ? 'multiple' : 'single'\n  }\"\n  [sort]=\"sort\"\n  (sortChange)=\"sortChange($event)\"\n>\n <kendo-grid-column field=\"ProductID\" title=\"ID\" width=\"40\">\n </kendo-grid-column>\n <kendo-grid-column field=\"ProductName\" title=\"Name\" width=\"250\">\n </kendo-grid-column>\n<kendo-grid-column field=\"Category.CategoryName\" title=\"Category\" width=\"250\">\n </kendo-grid-column>\n\n\n <kendo-grid-column field=\"UnitPrice\" title=\"Price\" width=\"80\" format=\"{0:c}\">\n </kendo-grid-column>\n\n <ng-template kendoPagerTemplate let-totalPages=\"totalPages\" let-currentPage=\"currentPage\">\n    <kendo-pager-prev-buttons></kendo-pager-prev-buttons>\n    <!-- <kendo-slider\n        [showButtons]=\"false\"\n        [tickPlacement]=\"'none'\"\n        [max]=\"totalPages\"\n        [min]=\"1\"\n        (valueChange)=\"sliderChange($event)\"\n        [value]=\"currentPage\">\n    </kendo-slider> -->\n    <kendo-pager-info></kendo-pager-info>\n    <kendo-pager-next-buttons></kendo-pager-next-buttons>\n    <kendo-pager-page-sizes [pageSizes]=\"[10, 20, 50, 100, 200]\"></kendo-pager-page-sizes>\n </ng-template>\n</kendo-grid>\n\n"
+module.exports = "<div class=\"header-bar\">\n  <img src=\"https://d9hhrg4mnvzow.cloudfront.net/go.cority.com/cority-ehs-software-adwordsnew/579a8b26-cority-logo-white-bg-1620x534_032010032010000000.jpg\" class=\"logo\">\n</div>\n<kendo-grid\n  [kendoGridBinding]=\"data\"\n  [data]=\"gridView\"\n  [pageSize]=\"pageSize\"\n  [skip]=\"skip\"\n  [pageable]=\"{\n    buttonCount: buttonCount,\n    info: info,\n    type: type,\n    pageSizes: pageSizes,\n    previousNext: previousNext\n  }\"\n  [scrollable]=\"'yes'\"\n  (pageChange)=\"pageChange($event)\"\n  [height]=\"600\"\n  [sortable]=\"{\n    allowUnsort: allowUnsort,\n    mode: multiple ? 'multiple' : 'single'\n  }\"\n  [sort]=\"sort\"\n  (sortChange)=\"sortChange($event)\"\n>\n<kendo-grid-column field=\"ProductID\" title=\"ID\" width=\"40\">\n</kendo-grid-column>\n<kendo-grid-column field=\"ProductName\" title=\"Name\" width=\"200\">\n</kendo-grid-column>\n<kendo-grid-column field=\"Category.CategoryName\" title=\"Category\" width=\"150\">\n</kendo-grid-column>\n<kendo-grid-column field=\"Category.Description\" title=\"Description\" width=\"200\">\n</kendo-grid-column>\n\n<kendo-grid-column field=\"UnitPrice\" title=\"Price\" width=\"80\" format=\"{0:c}\">\n</kendo-grid-column>\n<ng-template kendoPagerTemplate let-totalPages=\"totalPages\" let-currentPage=\"currentPage\">\n  <kendo-pager-prev-buttons></kendo-pager-prev-buttons>\n  <kendo-pager-numeric-buttons [buttonCount]=\"10\"></kendo-pager-numeric-buttons>\n  <kendo-pager-next-buttons></kendo-pager-next-buttons>\n  <kendo-pager-info></kendo-pager-info>\n  Current page: {{currentPage}}\n  <kendo-pager-page-sizes [pageSizes]=\"[10, 20, 50, 100]\"></kendo-pager-page-sizes>\n</ng-template>\n  <!-- <ng-template kendoPagerTemplate let-totalPages=\"totalPages\" let-currentPage=\"currentPage\">\n  <kendo-pager-prev-buttons></kendo-pager-prev-buttons>\n  <kendo-pager-page-sizes [pageSizes]=\"[10, 20, 50, 100, 200]\"></kendo-pager-page-sizes>\n  </ng-template> -->\n</kendo-grid>\n\n"
 
 /***/ }),
 
@@ -68,15 +68,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.data = _products__WEBPACK_IMPORTED_MODULE_1__["products"];
-        this.pageSize = 50;
+        this.pageSize = 20;
         this.skip = 0;
+        // public sliderChange(pageIndex: number): void {
+        //     this.skip = (pageIndex - 1) * this.pageSize;
+        // }
+        // public onPageChange(state: any): void {
+        //     this.pageSize = state.take;
+        // }
     }
-    AppComponent.prototype.sliderChange = function (pageIndex) {
-        this.skip = (pageIndex - 1) * this.pageSize;
-    };
-    AppComponent.prototype.onPageChange = function (state) {
-        this.pageSize = state.take;
-    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
