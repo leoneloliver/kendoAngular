@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { products } from './products';
 import { GridDataResult, PageChangeEvent } from '@progress/kendo-angular-grid';
@@ -10,15 +9,14 @@ import { GridDataResult, PageChangeEvent } from '@progress/kendo-angular-grid';
     
 })
 export class AppComponent {
-    public data: any[] = products;
-    public pageSize = 50;
-    public skip = 0;
+  public data: any[] = products;
+  public pageSize = 20;
+  public skip = 0;
 
-    public sliderChange(pageIndex: number): void {
-        this.skip = (pageIndex - 1) * this.pageSize;
-    }
-
-    public onPageChange(state: any): void {
-        this.pageSize = state.take;
-    }
+  // public sliderChange(pageIndex: number): void {
+  //     this.skip = (pageIndex - 1) * this.pageSize;
+  // }
+  // public onPageChange(state: any): void {
+  //     this.pageSize = state.take;
+  // }
 }

@@ -1,13 +1,21 @@
 <div class="header-bar">
-    <img src="https://d9hhrg4mnvzow.cloudfront.net/go.cority.com/cority-ehs-software-adwordsnew/579a8b26-cority-logo-white-bg-1620x534_032010032010000000.jpg" class="logo">
+  <img src="https://d9hhrg4mnvzow.cloudfront.net/go.cority.com/cority-ehs-software-adwordsnew/579a8b26-cority-logo-white-bg-1620x534_032010032010000000.jpg" class="logo">
 </div>
 <kendo-grid
   [kendoGridBinding]="data"
+  [data]="gridView"
   [pageSize]="pageSize"
   [skip]="skip"
-  [pageable]="true"
+  [pageable]="{
+    buttonCount: buttonCount,
+    info: info,
+    type: type,
+    pageSizes: pageSizes,
+    previousNext: previousNext
+  }"
+  [scrollable]="'yes'"
+  (pageChange)="pageChange($event)"
   [height]="600"
-  (pageChange)="onPageChange($event)"
   [sortable]="{
     allowUnsort: allowUnsort,
     mode: multiple ? 'multiple' : 'single'
@@ -15,30 +23,28 @@
   [sort]="sort"
   (sortChange)="sortChange($event)"
 >
- <kendo-grid-column field="ProductID" title="ID" width="40">
- </kendo-grid-column>
- <kendo-grid-column field="ProductName" title="Name" width="250">
- </kendo-grid-column>
-<kendo-grid-column field="Category.CategoryName" title="Category" width="250">
- </kendo-grid-column>
+<kendo-grid-column field="ProductID" title="ID" width="40">
+</kendo-grid-column>
+<kendo-grid-column field="ProductName" title="Name" width="200">
+</kendo-grid-column>
+<kendo-grid-column field="Category.CategoryName" title="Category" width="150">
+</kendo-grid-column>
+<kendo-grid-column field="Category.Description" title="Description" width="200">
+</kendo-grid-column>
 
-
- <kendo-grid-column field="UnitPrice" title="Price" width="80" format="{0:c}">
- </kendo-grid-column>
-
- <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
-    <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
-    <!-- <kendo-slider
-        [showButtons]="false"
-        [tickPlacement]="'none'"
-        [max]="totalPages"
-        [min]="1"
-        (valueChange)="sliderChange($event)"
-        [value]="currentPage">
-    </kendo-slider> -->
-    <kendo-pager-info></kendo-pager-info>
-    <kendo-pager-next-buttons></kendo-pager-next-buttons>
-    <kendo-pager-page-sizes [pageSizes]="[10, 20, 50, 100, 200]"></kendo-pager-page-sizes>
- </ng-template>
+<kendo-grid-column field="UnitPrice" title="Price" width="80" format="{0:c}">
+</kendo-grid-column>
+<ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+  <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+  <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
+  <kendo-pager-next-buttons></kendo-pager-next-buttons>
+  <kendo-pager-info></kendo-pager-info>
+  Current page: {{currentPage}}
+  <kendo-pager-page-sizes [pageSizes]="[10, 20, 50, 100]"></kendo-pager-page-sizes>
+</ng-template>
+  <!-- <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+  <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+  <kendo-pager-page-sizes [pageSizes]="[10, 20, 50, 100, 200]"></kendo-pager-page-sizes>
+  </ng-template> -->
 </kendo-grid>
 
