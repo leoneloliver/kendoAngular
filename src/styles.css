@@ -1,29 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 body{
   font-family: sans-serif;
+  margin: 0;
+  background: #efefef;
+  overflow-x: hidden;
 }
 .k-grid-header, .k-grid-toolbar, .k-grouping-header, .k-grid-add-row, .k-grid-footer {
-    color: #ffffff;
-    background-color: #ef9133;
+  color: #ffffff;
+  background-color: #ef9133;
 }
 .k-pager-wrap {
-    color: #f7f7f7;
-    background-color: #1f5aa7;
+  color: #f7f7f7;
+  background-color: #1f5aa7;
 }
 .k-grid th, .k-grid td {
-    padding: 13px 12px;
+  padding: 13px 12px;
 }
 .k-pager-nav:hover {
-    color: #f7f7f7;
-    background-color: #f6b733;
+  color: #f7f7f7;
+  background-color: #ef9133;
+  border-radius: 50px;
 }
 .k-grid-header .k-i-sort-asc-sm, .k-grid-header .k-i-sort-desc-sm, .k-grid-header .k-sort-order {
-    color: #ffffff;
+  color: #ffffff;
 }
 .k-pager-numbers .k-state-selected {
-    color: #fff;
-    background-color: #ef9133;
+  color: #fff;
+  background-color: #ef9133;
 }
 .k-pager-numbers .k-link {
-    color: #f5f5f5;
+  color: #f5f5f5;
+  border-radius: 50px;
+}
+.k-grid {
+  border-color: rgba(0,0,0,0.08);
+  color: #656565;
+  background-color: #fff;
+  background-clip: padding-box;
+}
+.k-pager-wrap .k-pager-sizes .k-dropdown, .k-pager-wrap .k-pager-sizes>select {
+  margin: 0 8px 0 0;
+  width: 5.2em;
+  background: #1e5aa6;
+  border-radius: 0 !important;
+  color: #fff;
+  height: 25px;
+  border: 1px solid #ddd;
 }

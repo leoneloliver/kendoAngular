@@ -1,50 +1,52 @@
 <div class="header-bar">
-  <img src="https://d9hhrg4mnvzow.cloudfront.net/go.cority.com/cority-ehs-software-adwordsnew/579a8b26-cority-logo-white-bg-1620x534_032010032010000000.jpg" class="logo">
+  <div class="container"><img [src]="'assets/img/logo.jpg'" class="logo"></div>
 </div>
-<kendo-grid
-  [kendoGridBinding]="data"
-  [data]="gridView"
-  [pageSize]="pageSize"
-  [skip]="skip"
-  [pageable]="{
-    buttonCount: buttonCount,
-    info: info,
-    type: type,
-    pageSizes: pageSizes,
-    previousNext: previousNext
-  }"
-  [scrollable]="'yes'"
-  (pageChange)="pageChange($event)"
-  [height]="600"
-  [sortable]="{
-    allowUnsort: allowUnsort,
-    mode: multiple ? 'multiple' : 'single'
-  }"
-  [sort]="sort"
-  (sortChange)="sortChange($event)"
->
-<kendo-grid-column field="ProductID" title="ID" width="40">
-</kendo-grid-column>
-<kendo-grid-column field="ProductName" title="Name" width="200">
-</kendo-grid-column>
-<kendo-grid-column field="Category.CategoryName" title="Category" width="150">
-</kendo-grid-column>
-<kendo-grid-column field="Category.Description" title="Description" width="200">
-</kendo-grid-column>
+<div class="container">
+  <kendo-grid
+    [kendoGridBinding]="data"
+    [data]="gridView"
+    [pageSize]="pageSize"
+    [skip]="skip"
+    [pageable]="{
+      buttonCount: buttonCount,
+      info: info,
+      type: type,
+      pageSizes: pageSizes,
+      previousNext: previousNext
+    }"
+    [scrollable]="'yes'"
+    (pageChange)="pageChange($event)"
+    [height]="560"
+    [sortable]="{
+      allowUnsort: allowUnsort,
+      mode: multiple ? 'multiple' : 'single'
+    }"
+    [sort]="sort"
+    (sortChange)="sortChange($event)"
+  >
+  <kendo-grid-column field="ProductID" title="ID" width="40">
+  </kendo-grid-column>
+  <kendo-grid-column field="ProductName" title="Name" width="200">
+  </kendo-grid-column>
+  <kendo-grid-column field="Category.CategoryName" title="Category" width="150">
+  </kendo-grid-column>
+  <kendo-grid-column field="Category.Description" title="Description" width="200">
+  </kendo-grid-column>
 
-<kendo-grid-column field="UnitPrice" title="Price" width="80" format="{0:c}">
-</kendo-grid-column>
-<ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
-  <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
-  <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
-  <kendo-pager-next-buttons></kendo-pager-next-buttons>
-  <kendo-pager-info></kendo-pager-info>
-  Current page: {{currentPage}}
-  <kendo-pager-page-sizes [pageSizes]="[10, 20, 50, 100]"></kendo-pager-page-sizes>
-</ng-template>
-  <!-- <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
-  <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
-  <kendo-pager-page-sizes [pageSizes]="[10, 20, 50, 100, 200]"></kendo-pager-page-sizes>
-  </ng-template> -->
-</kendo-grid>
-
+  <kendo-grid-column field="UnitPrice" title="Price" width="80" format="{0:c}">
+  </kendo-grid-column>
+  <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+    <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+    <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
+    <kendo-pager-next-buttons></kendo-pager-next-buttons>
+    <kendo-pager-info></kendo-pager-info>
+    <!-- Current page: {{currentPage}} -->
+    <kendo-pager-page-sizes [pageSizes]="[10, 20, 50, 100]"></kendo-pager-page-sizes>
+  </ng-template>
+    <!-- <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+    <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+    <kendo-pager-page-sizes [pageSizes]="[10, 20, 50, 100, 200]"></kendo-pager-page-sizes>
+    </ng-template> -->
+  </kendo-grid>
+</div>
+<div class="footer">Developed by Leonel</div>
