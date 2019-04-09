@@ -12,7 +12,7 @@ export class AppComponent {
   public data: any[] = products;
   public pageSize = 20;
   public skip = 0;
-
+  
   // public sliderChange(pageIndex: number): void {
   //     this.skip = (pageIndex - 1) * this.pageSize;
   // }

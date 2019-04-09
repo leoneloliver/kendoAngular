@@ -15,14 +15,13 @@
       previousNext: previousNext
     }"
     [scrollable]="'yes'"
-    (pageChange)="pageChange($event)"
     [height]="560"
     [sortable]="{
       allowUnsort: allowUnsort,
       mode: multiple ? 'multiple' : 'single'
     }"
     [sort]="sort"
-    (sortChange)="sortChange($event)"
+    
   >
   <kendo-grid-column field="ProductID" title="ID" width="40">
   </kendo-grid-column>

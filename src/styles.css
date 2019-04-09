@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  min-height: 100%;
+  position: relative;
+}
 body{
   font-family: sans-serif;
   margin: 0;
@@ -46,4 +50,14 @@ body{
   color: #fff;
   height: 25px;
   border: 1px solid #ddd;
+}
+.k-grid tr td{
+  border-color: #fff; 
+  border-style: solid; 
+  border-width: 1px 0 1px 0;
+}
+.k-grid tr:hover td{
+  border-color: #ef9133a8; 
+  border-style: solid; 
+  border-width: 1px 0 1px 0 !important;
 }
