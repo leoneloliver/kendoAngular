@@ -67,7 +67,9 @@
   height: 25px;
   border: 1px solid #ddd;
 }
-
+kendo-grid.k-widget.k-grid.k-grid-no-scrollbar.cority {
+    height: 688px !important;
+}
 @media screen and (max-width: 768px) {
   .header-bar{
     text-align: center;
